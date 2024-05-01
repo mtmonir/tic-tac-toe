@@ -1,3 +1,4 @@
+#https://www.youtube.com/watch?v=LbTu0rwikwg
 import sys
 import pygame
 import numpy as np
@@ -41,4 +42,4 @@ def draw_figures(color=WHITE):
         for col in range(BOARD_COLS):
             if board[row][col] == 1:
                 pygame.draw.circle(screen, color, (int(col * SQUARE_SIZE + SQUARE_SIZE // 2), int(row * SQUARE_SIZE + SQUARE_SIZE // 2)), CIRCLE_RADIUS, CIRCLE_WIDTH)
-                
+
