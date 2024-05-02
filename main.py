@@ -32,8 +32,8 @@ board = np.zeros((BOARD_ROWS, BOARD_COLS))
 
 def draw_lines(color=WHITE):
     for i in range(1, BOARD_ROWS):
-        pygame.draw.line(screen, color, start_pos=(0,SQUARE_SIZE * i), end_pos=(WIDTH, SQUARE_SIZE *i), width = LINE_WIDTH)
-        pygame.draw.line(screen, color, start_pos=(SQUARE_SIZE * i, 0), end_pos=(SQUARE_SIZE *i, HEIGHT), width = LINE_WIDTH)
+        pygame.draw.line(screen, color, (0,SQUARE_SIZE * i), (WIDTH, SQUARE_SIZE *i), LINE_WIDTH)
+        pygame.draw.line(screen, color, (SQUARE_SIZE * i, 0), (SQUARE_SIZE *i, HEIGHT), LINE_WIDTH)
         
 
 
@@ -43,8 +43,8 @@ def draw_figures(color=WHITE):
             if board[row][col] == 1:
                 pygame.draw.circle(screen, color, (int(col * SQUARE_SIZE + SQUARE_SIZE // 2), int(row * SQUARE_SIZE + SQUARE_SIZE // 2)), CIRCLE_RADIUS, CIRCLE_WIDTH)
             elif board[row][col] == 2:
-                pygame.draw.line(screen, color, start_pos= (col * SQUARE_SIZE + SQUARE_SIZE // 4, row*SQUARE_SIZE+ 3 * SQUARE_SIZE // 4), end_pos=(col*SQUARE_SIZE+3*SQUARE_SIZE //4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), width = CROSS_WIDTH)
-                pygame.draw.line(screen, color, start_pos= (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row*SQUARE_SIZE+ SQUARE_SIZE // 4), end_pos=(col*SQUARE_SIZE+3*SQUARE_SIZE //4, row * SQUARE_SIZE + SQUARE_SIZE // 4), width = CROSS_WIDTH)
+                pygame.draw.line(screen, color, start_pos= (col * SQUARE_SIZE + SQUARE_SIZE // 4, row*SQUARE_SIZE+ SQUARE_SIZE // 4), end_pos=(col*SQUARE_SIZE+3*SQUARE_SIZE //4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), width = CROSS_WIDTH)
+                pygame.draw.line(screen, color, start_pos= (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row*SQUARE_SIZE+ SQUARE_SIZE // 4), end_pos=(col*SQUARE_SIZE+SQUARE_SIZE //4, row * SQUARE_SIZE + 3* SQUARE_SIZE // 4), width = CROSS_WIDTH)
 
 def mark_square(row, col, player):
     board[row][col] = player
